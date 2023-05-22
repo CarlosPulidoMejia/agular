@@ -7,3 +7,11 @@
 <p [ngClass]="['underlined','small']">Aún no tienes elementos en la lista</p>
 
 <p [ngClass]="{underlined: false, small:true}">Te recomendamos crear un elemento</p>
+
+<!--Bloque de directivas estructurales-->
+
+<p *ngIf="cargando">
+    Cargando...
+</p>
+
+<button (click)="cambiarCargadno()">Cambiar Cargando</button>

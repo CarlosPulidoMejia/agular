@@ -9,9 +9,19 @@
 <p [ngClass]="{underlined: false, small:true}">Te recomendamos crear un elemento</p>
 
 <!--Bloque de directivas estructurales-->
-
+<!-- 
 <p *ngIf="cargando">
     Cargando...
-</p>
+</p> -->
 
-<button (click)="cambiarCargadno()">Cambiar Cargando</button>
+<button (click)="cambiarCargadno()">{{ cargando ? 'Terminar Carga' : 'Iniciar Carga' }}</button>
+
+<ng-container *ngIf="!cargando;else templateEspera">
+    <p>Todo Listo</p>
+</ng-container>
+
+<ng-template #templateEspera>
+    <p>Cargando...</p>
+    <p>Espere a que termine el proceso</p>
+</ng-template>
+

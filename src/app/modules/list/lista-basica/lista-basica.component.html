@@ -1,3 +1,9 @@
+<!--Bloque de directivas de Atributo-->
+
 <p [ngStyle]="{color: 'tomato', fontWeight: 'bolder'}">Lista de elementos: </p>
 
-<p>Aquí vamos a iterar sobre una lista y mostrar varios elementos</p>
+<p ngClass="underlined">Aquí vamos a iterar sobre una lista y mostrar varios elementos</p>
+
+<p [ngClass]="['underlined','small']">Aún no tienes elementos en la lista</p>
+
+<p [ngClass]="{underlined: false, small:true}">Te recomendamos crear un elemento</p>

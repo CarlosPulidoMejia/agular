@@ -12,7 +12,9 @@ export class LoginFormComponent implements OnInit{
   ngOnInit(): void {
     this.authService.login('eve.holt@reqres.in', 'cityslicka').subscribe(
         (response) => {console.log('Respuesta Login: ',response)
-        sessionStorage.setItem('token', response.token)
+        if(response.token){
+          sessionStorage.setItem('token', response.token)
+        }
         },
         (error) => console.error(`Ha ocurrido un error: ${error}`),
         ()=> console.info('Se ha completado la llamada')

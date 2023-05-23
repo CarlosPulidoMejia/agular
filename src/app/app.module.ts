@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 //Modulo personalizado que exporta componentes de tipo lista
 import { ListModule } from './modules/list/list.module';
 import { ListaContactosComponent } from './Components/lista-contactos/lista-contactos.component';
+import { LoginFormComponent } from './Components/forms/login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SaludoComponent,
-    ListaContactosComponent
+    ListaContactosComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

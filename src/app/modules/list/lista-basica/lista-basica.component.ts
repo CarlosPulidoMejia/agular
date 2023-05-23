@@ -27,6 +27,7 @@ export class ListaBasicaComponent implements OnInit {
     }
   ];
   cargando: boolean = false;
+  opcion: number = 0;
 
   ngOnInit(): void{
 
@@ -34,6 +35,10 @@ export class ListaBasicaComponent implements OnInit {
 
   cambiarCargadno(){
     this.cargando = !this.cargando
+  }
+
+  escojeropcion(opcionEscogida: number){
+    this.opcion = opcionEscogida //el valor cambia, implica un cambio en los elementos renderizados
   }
 
 }

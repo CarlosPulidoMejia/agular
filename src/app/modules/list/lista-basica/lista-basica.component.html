@@ -35,3 +35,21 @@
         <p>{{ producto.descripcion }}</p>
     </div>
 </div>
+
+<!--Bloque para entender ngSwitch-->
+<div [ngSwitch]="opcion">
+    <p [id]="1" *ngSwitchCase="1">Haz escogido la Opción 1</p>
+    <p [id]="2" *ngSwitchCase="2">Haz escogido la Opción 2</p>
+    <p [id]="3" *ngSwitchCase="3">Haz escogido la Opción 3</p>
+    <p [id]="4" *ngSwitchCase="4">Haz escogido la Opción 4</p>
+    <p *ngSwitchDefaul class="cerrar">Ninguna de las opciones valida</p>
+</div>
+
+<!--Seleccion de opción por el usuario-->
+<div>
+    <input type="radio" name="opcion" (click)="escojeropcion(1)"/> Opción 1
+    <input type="radio" name="opcion" (click)="escojeropcion(2)"/> Opción 2
+    <input type="radio" name="opcion" (click)="escojeropcion(3)"/> Opción 3
+    <input type="radio" name="opcion" (click)="escojeropcion(4)"/> Opción 4
+    <input type="radio" selected="selected" name="opcion" (click)="escojeropcion(0)"/> Ocultar
+</div>

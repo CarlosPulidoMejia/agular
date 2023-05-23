@@ -25,3 +25,13 @@
     <p>Espere a que termine el proceso</p>
 </ng-template>
 
+<!--Bloque para explicar ngFor-->
+<!--Iteramos la lista-->
+<div *ngFor="let producto of listaElementos; let i = index; let even = even">
+    <!--Ambito de for donde tenemos acceso a cada elemento de la lista-->
+    <div [ngStyle]="even?{backgroundColor: 'blue', color: 'white'}: {backgroundColor:'green', color:'white'}" class="producto">
+        <p>ID: {{ i+1 }}</p>
+        <p>{{ producto.nombre }} - {{ producto.precio }} $</p>
+        <p>{{ producto.descripcion }}</p>
+    </div>
+</div>

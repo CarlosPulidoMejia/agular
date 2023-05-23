@@ -53,3 +53,15 @@
     <input type="radio" name="opcion" (click)="escojeropcion(4)"/> Opción 4
     <input type="radio" selected="selected" name="opcion" (click)="escojeropcion(0)"/> Ocultar
 </div>
+
+<!--Podemos concatenar directivas-->
+<p>Productos de más de $10</p>
+<div *ngFor="let producto of listaElementos; let i = index; let even = even">
+    <!--Ambito de for donde tenemos acceso a cada elemento de la lista-->
+    <!--Solo renderizar solo los productos de más de 10 en precio-->
+    <div *ngIf="producto.precio>10" [ngStyle]="even?{backgroundColor: 'blue', color: 'white'}: {backgroundColor:'green', color:'white'}" class="producto">
+        <p>ID: {{ i+1 }}</p>
+        <p>{{ producto.nombre }} - {{ producto.precio }} $</p>
+        <p>{{ producto.descripcion }}</p>
+    </div>
+</div>
